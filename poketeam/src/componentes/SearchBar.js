@@ -15,9 +15,9 @@ const SearchBar = () => {
         <div className="searchBar-container">
             <div className="searchBar">
                 <input placeholder="Buscar" onChange={onChangeHandler} />
+            </div>
             <div className="searchBar-btn">
                 <button onClick={onButtonClickHandler} >Buscar</button>
-            </div>
             </div>
         </div>
     )
