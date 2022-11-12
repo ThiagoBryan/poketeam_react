@@ -23,15 +23,15 @@ const SearchBar = () => {
             <div className="searchBar">
                 <input placeholder="Buscar Pokémon" onChange={onChangeHandler} />
             </div>
-            <div className="searchBar-btn">
-                <button onClick={onButtonClickHandler} >Buscar</button>
+            <div>
+                <button className="searchBar-btn" onClick={onButtonClickHandler} >Buscar</button>
             </div>
             {pokemon ? (
                 <div>
                     <div>Nome: {pokemon.name}</div>
                     <div>Tipo:
-                    {pokemon.types.map((t) =>
-                    <span> { t.type.name } </span>
+                    {pokemon.types.map((t, index) =>
+                    <span key={index}> { t.type.name } </span>
                     )}
                     </div>
                     <div>Peso: {pokemon.weight} Kg</div>

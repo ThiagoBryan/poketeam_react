@@ -3,7 +3,6 @@ import Pokemon from "./Pokemon";
 
 const Pokedex = (props) => {
   const { pokemons, loading } = props;
-  //   console.log("pokemons", pokemons);
   return (
     <div>
       <div className="pokedex-header">
@@ -11,17 +10,15 @@ const Pokedex = (props) => {
         <div>Paginação:</div>
       </div>
       {loading ? (
-      <div>Carregando..........</div>
+        <div>Carregando..........</div>
       ) : (
-        <div className="pokedex-grind">
-          {/* {pokemons &&
+        <div className="pokedex-grid">
+          {pokemons &&
             pokemons.map((pokemon, index) => {
               return (
-                <div>
                   <Pokemon key={index} pokemon={pokemon} />
-                </div>
               );
-            })} */}
+            })}
         </div>
       )}
     </div>
