@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import NavBar from "./componentes/Navbar";
 import SearchBar from "./componentes/SearchBar";
@@ -7,7 +8,6 @@ function App() {
     <div>
       <NavBar />
       <SearchBar />
-      
       <div className="App"></div>
     </div>
   );

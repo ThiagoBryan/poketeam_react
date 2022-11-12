@@ -41,7 +41,12 @@ nav {
  height: 45px;
  color: white;
  padding: 10px 12px;
+ cursor: pointer;
 }
+
+.searchBar-btn button:hover{
+  background-color: #2f81d3;
+ }
 
 
 .App {
