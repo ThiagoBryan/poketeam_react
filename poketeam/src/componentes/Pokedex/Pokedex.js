@@ -1,7 +1,9 @@
 import React from "react";
-import Pokemon from "./Pokemon";
+import Pokemon from "../Pokemon/Pokemon";
+import styles from "../Pokedex/Pokedex.css"
 
 const Pokedex = (props) => {
+  const carregar = require("../../assets/charmander.gif")
   const { pokemons, loading } = props;
   return (
     <div>
@@ -10,7 +12,12 @@ const Pokedex = (props) => {
         <div>Paginação:</div>
       </div>
       {loading ? (
-        <div>Carregando..........</div>
+           <div className="charmander-gif">
+       <img 
+       alt="Charmander"
+       src={carregar}
+       />
+       </div>
       ) : (
         <div className="pokedex-grid">
           {pokemons &&

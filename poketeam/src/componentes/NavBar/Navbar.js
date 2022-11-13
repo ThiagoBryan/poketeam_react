@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "./NavBar.css"
 
 const NavBar = () => {
-    const logo = require("../assets/Poketeam.png")
+    const logo = require("../../assets/Poketeam.png")
     return(
        <nav>
             <div>

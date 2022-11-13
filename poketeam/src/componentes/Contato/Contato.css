@@ -1,0 +1,11 @@
+.icon-linkedin{
+    cursor: pointer;
+}
+
+a:link {
+    background-color: rgb(1, 1, 8);
+   }
+   
+   a:hover {
+    color: rgb(235, 235, 11);
+   }

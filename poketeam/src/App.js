@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import NavBar from "./componentes/Navbar";
-import SearchBar from "./componentes/SearchBar";
-import Pokedex from "./componentes/Pokedex";
-import { getPokemons } from "./api";
+import NavBar from "./componentes/NavBar/Navbar";
+import Pokedex from "./componentes/Pokedex/Pokedex";
+import { getPokemons, getPokemonData } from "./api";
+import SearchBarEvolution from "./componentes/SearchBarEvolution/SearchBarEvolution";
+import SearchBar from "./componentes/SearchBar/SearchBar";
+import Footer from './componentes/Footer/Footer';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -12,8 +14,11 @@ function App() {
   const fetchPokemons = async () => {
     try {
       setLoading(true);
-      const results = await getPokemons();
-
+      const data = await getPokemons();
+      const promises = data.results.map(async (pokemon) => {
+        return await getPokemonData(pokemon.url);
+      });
+      const results = await Promise.all(promises); // pega as chamadas e retorna
       setPokemons(results);
       setLoading(false);
     } catch (error) {
@@ -22,7 +27,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log("carregou");
     fetchPokemons();
   }, []);
 
@@ -30,7 +34,9 @@ function App() {
     <div>
       <NavBar />
       <SearchBar />
-      <Pokedex pokemons={pokemons.results} loading={loading} />
+      <SearchBarEvolution />
+      <Pokedex pokemons={pokemons} loading={loading} />
+      <Footer />
     </div>
   );
 }

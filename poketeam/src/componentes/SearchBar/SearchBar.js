@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { searchPokemom } from "../api"
+import { searchPokemon} from "../../api";
+import styles from "./SearchBar.css"
 
 const SearchBar = () => {
     const [search, setSearch] = useState("dito")
     const [pokemon, setPokemon] = useState()
+    
 
     const onChangeHandler = (e) => {
         console.log("pokemon ", e.target.value)
@@ -12,12 +14,14 @@ const SearchBar = () => {
 
     const onButtonClickHandler = () => {
         onSearchHandler(search)
+       
     }
 
     const onSearchHandler = async (pokemon) => {
-        const result = await searchPokemom(pokemon)
+        const result = await searchPokemon(pokemon)
         setPokemon(result)
       }
+
     return (
         <div className="searchBar-container">
             <div className="searchBar">
@@ -39,6 +43,7 @@ const SearchBar = () => {
                 </div>
             ) : null}
         </div>
+
     )
 }
 

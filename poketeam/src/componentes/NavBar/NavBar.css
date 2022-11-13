@@ -1,0 +1,12 @@
+nav {
+    height: 140px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(46, 46, 49);
+  }
+  
+  .navbar-img {
+    width: 200px;
+  }
