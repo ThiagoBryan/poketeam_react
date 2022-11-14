@@ -10,3 +10,7 @@ nav {
   .navbar-img {
     width: 200px;
   }
+
+  .icon-pokemon-team {
+    color: rgba(255, 255, 6, 0.773);
+  }

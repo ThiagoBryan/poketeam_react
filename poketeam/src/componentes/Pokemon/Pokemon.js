@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./pokemon.css"
+import TeamContext from "../../Context/TeamContext";
+import { CgPokemon } from "react-icons/cg";
+import { MdOutlineCatchingPokemon } from "react-icons/md";
+
 
 const Pokemon = (props) => {
+  const {pokemonTeam, updatePokemonTeam} = useContext(TeamContext)
   const { pokemon } = props;
   const adicionar = () => {
-      console.log("Adicionou");
+    updatePokemonTeam(pokemon.name)
     }
 
+    const poke = pokemonTeam.includes(pokemon.name) ? <MdOutlineCatchingPokemon className="poke" /> : <CgPokemon /> 
   return (
     <div className="pokemon-card">
       <div className="pokemon-image-container">
@@ -31,7 +37,10 @@ const Pokemon = (props) => {
               );
             })}
           </div>
-          <button className="pokemon-adicionar-btn" onClick={adicionar}>Adicionar ao seu time</button>
+          <div className="add-team">
+          <h6>Adicionar ao seu time</h6>
+          <div onClick={adicionar}>{poke}</div>
+          </div>
         </div>
       </div>
     </div>

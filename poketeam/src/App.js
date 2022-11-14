@@ -6,14 +6,16 @@ import { getPokemons, getPokemonData } from "./api";
 import SearchBarEvolution from "./componentes/SearchBarEvolution/SearchBarEvolution";
 import SearchBar from "./componentes/SearchBar/SearchBar";
 import Footer from "./componentes/Footer/Footer";
+import { TeamProvider } from "./Context/TeamContext";
 
 function App() {
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
   const [pokemons, setPokemons] = useState([]);
+  const [team, setTeam] = useState([]);
 
-  const itensPerPage = 25;
+  const itensPerPage = 27;
   const fetchPokemons = async () => {
     try {
       setLoading(true);
@@ -34,20 +36,38 @@ function App() {
     fetchPokemons();
   }, [page]);
 
+  const updatePokemonTeam = (name) => {
+    const updateTeam = [...team];
+    const teamIndex = team.indexOf(name);
+    if (teamIndex >= 0) {
+      updateTeam.slice(teamIndex, 1);
+    } else {
+      updateTeam.push(name);
+    }
+    setTeam(updateTeam);
+  };
+
   return (
-    <div>
-      <NavBar />
-      <SearchBar />
-      <SearchBarEvolution />
-      <Pokedex
-        pokemons={pokemons}
-        loading={loading}
-        page={page}
-        setPage={setPage}
-        totalPages={totalPages}
-      />
-      <Footer />
-    </div>
+    <TeamProvider
+      value={{
+        pokemonTeam: team,
+        updatePokemonTeam: updatePokemonTeam,
+      }}
+    >
+      <div>
+        <NavBar />
+        <SearchBar />
+        <SearchBarEvolution />
+        <Pokedex
+          pokemons={pokemons}
+          loading={loading}
+          page={page}
+          setPage={setPage}
+          totalPages={totalPages}
+        />
+        <Footer />
+      </div>
+    </TeamProvider>
   );
 }
 

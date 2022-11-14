@@ -32,6 +32,7 @@ const SearchBar = () => {
             </div>
             {pokemon ? (
                 <div>
+                    <div>ID: # {pokemon.id}</div>
                     <div>Nome: {pokemon.name}</div>
                     <div>Tipo:
                     {pokemon.types.map((t, index) =>
