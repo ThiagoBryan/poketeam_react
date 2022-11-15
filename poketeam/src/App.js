@@ -7,6 +7,7 @@ import Footer from "./componentes/Footer/Footer";
 import { TeamProvider } from "./Context/TeamContext";
 import NavBar from "./componentes/NavBar/Navbar";
 import SearchBar from "./componentes/SearchBar/SearchBar";
+import SearchType from './componentes/SerachType/SearchType';
 
 const sadLoading = require("./assets/sad_charmander.gif");
 const teamKey = "t";
@@ -107,6 +108,32 @@ function App() {
     setLoading(false);
   };
 
+  const onSearchTypeHandler = async (type) =>  {
+    setLoading(true);
+    setNotFound(false);
+    const data = await getPokemons(itensPerPage, itensPerPage * page);
+    const promises = data.results.map(async (pokemon) => {
+      return await getPokemonData(pokemon.url);
+    });
+    const results = await Promise.all(promises);
+    results.map((r)=>{
+      r.types.map((t)=>{
+        let filter = t.type.name.filter(t => (t.toLowerCase() == type));
+        console.log(filter);
+      });
+    });
+    if (!results) {
+      setNotFound(true);
+    } else {
+      console.log(results);
+      setPokemons(results);
+      setPage(0);
+      setTotalPages(1);
+    }
+    setLoading(false);
+    setTotalPages(Math.ceil(data.count / itensPerPage));
+  };
+
   return (
     <TeamProvider
       value={{
@@ -120,6 +147,7 @@ function App() {
         />
         <SearchBarEvolution onSearch={onSearchEvolutionHandler} />
         <SearchBar onSearch={onSearchHandler} />
+        <SearchType onSearch={onSearchTypeHandler}/>
         {notFound ? (
           <div className="not-found">
             Pokémon não Encontrado

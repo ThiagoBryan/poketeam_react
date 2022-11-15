@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { searchPokemonEvolution, searchPokemon } from "../../api";
-import styles from "./SearchEvolution.css"
+import styles from "./SearchEvolution.css";
 
 const SearchBarEvolution = (props) => {
   const [search, setSearch] = useState("dito");
@@ -32,23 +32,38 @@ const SearchBarEvolution = (props) => {
   };
 
   return (
-      <div className="pokemon-card">
-    <div className="searchEvoBar-container">
-      <div className="searchBar">
-        <input placeholder="Buscar Evolução" onChange={onChangeHandler} />
-      </div>
-      <div>
-        <button className="searchBar-btn" onClick={onButtonClickHandler}>
-          Buscar
-        </button>
-      </div>
-      {pokemon ? (
-        <div className="card-body">
-          <div className="card-top">Nome: {pokemon.chain.evolves_to[0].species.name}</div>
-          <img className="pokemon-image" src={image} alt={pokemon.chain.evolves_to[0].species.name} />
+    <div className="pokemon-Evocard">
+      <div className="searchEvoBar-container">
+        <div className="searchBar">
+          <input placeholder="Buscar Evolução" onChange={onChangeHandler} />
         </div>
-      ) : null}
-    </div>
+        <div>
+          <button className="searchBar-btn" onClick={onButtonClickHandler}>
+            Buscar
+          </button>
+        </div>
+        {pokemon ? (
+          <div className="card-evoBody">
+            <div className="card-evoTop">
+              Nome: {pokemon.chain.evolves_to[0].species.name}
+            </div>
+            <img
+              className="pokemon-image"
+              src={image}
+              alt={pokemon.chain.evolves_to[0].species.name}
+            />
+            {/* <div className="card-evoBottom">
+              {pokemon.types.map((type, index) => {
+                return (
+                  <div key={index} className="pokemon-type-text">
+                    {type.type.name}
+                  </div>
+                );
+              })}
+            </div> */}
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 };
