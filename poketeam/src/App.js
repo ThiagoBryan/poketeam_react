@@ -17,7 +17,7 @@ function App() {
   const [pokemons, setPokemons] = useState([]);
   const [notFound, setNotFound] = useState([]);
   const [team, setTeam] = useState([]);
-  // const [viewPokemon, setViewPokemon] = useState([]);
+  const [viewPokemon, setViewPokemon] = useState([]);
 
   const itensPerPage = 27;
   const fetchPokemons = async () => {
@@ -116,7 +116,7 @@ function App() {
     >
       <div>
         <NavBar
-        //onViewPokemonClick={onViewPokemonClickHandler}
+        // onViewPokemonClick={onViewPokemonClickHandler}
         />
         <SearchBarEvolution onSearch={onSearchEvolutionHandler} />
         <SearchBar onSearch={onSearchHandler} />

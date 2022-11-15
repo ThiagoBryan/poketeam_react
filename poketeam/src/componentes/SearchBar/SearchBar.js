@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import styles from "./SearchBar.css"
 
 const SearchBar = (props) => {
-    const [search, setSearch] = useState("dito")
+    const [search, setSearch] = useState("")
     const {onSearch} = props;
 
     const onChangeHandler = (e) => {
-        setSearch(e.target.value)
+        setSearch(e.target.value.toLowerCase());
         if(e.target.value.length === 0) {
             onSearch(undefined)
         }
@@ -14,12 +14,13 @@ const SearchBar = (props) => {
 
     const onButtonClickHandler = () => {
         onSearch(search)
+        document.getElementById('search').value='';
     }
 
     return (
         <div className="searchBar-container">
             <div className="searchBar">
-                <input placeholder="Buscar Pokémon" onChange={onChangeHandler} />
+                <input id="search" placeholder="Buscar Pokémon" onChange={onChangeHandler} />
             </div>
             <div>
                 <button className="searchBar-btn" onClick={onButtonClickHandler}>Buscar</button>

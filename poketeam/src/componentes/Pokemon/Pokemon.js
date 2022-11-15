@@ -38,7 +38,7 @@ const Pokemon = (props) => {
             })}
           </div>
           <div className="add-team">
-          {/* <button className="btn-evo">Evolução</button> */}
+          <button className="btn-evo">Evolução</button>
           <h6>Adicionar ao seu time</h6>
           <div onClick={adicionar}>{poke}</div>
           </div>

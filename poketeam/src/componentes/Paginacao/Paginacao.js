@@ -7,7 +7,7 @@ const Paginacao = (props) => {
     return (
         <div className="paginacao-container">
             <div className="left-click" onClick={onLeftClick}><BsArrowLeftCircleFill /></div>
-            <div className="text">{page} de {totalPages}</div>
+            <div className="text"> {page} de {totalPages}</div>
             <div className="right-click" onClick={onRightClick}><BsFillArrowRightCircleFill /></div>
         </div>
     )
