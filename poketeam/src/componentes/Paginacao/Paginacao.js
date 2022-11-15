@@ -1,14 +1,14 @@
 import React from "react";
-import styles from "./Paginacao.css"
+import styles from "./Paginacao.css";
 import { BsArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
 
 const Paginacao = (props) => {
     const {page, totalPages, onLeftClick, onRightClick} = props;
     return (
         <div className="paginacao-container">
-            <button onClick={onLeftClick}><div><BsArrowLeftCircleFill /></div></button>
-            <div>{page} de {totalPages}</div>
-            <button onClick={onRightClick}><div><BsFillArrowRightCircleFill /></div></button>
+            <div className="left-click" onClick={onLeftClick}><BsArrowLeftCircleFill /></div>
+            <div className="text">{page} de {totalPages}</div>
+            <div className="right-click" onClick={onRightClick}><BsFillArrowRightCircleFill /></div>
         </div>
     )
 }
