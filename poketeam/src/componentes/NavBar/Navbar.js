@@ -3,8 +3,9 @@ import styles from "./NavBar.css"
 import { MdOutlineCatchingPokemon } from "react-icons/md";
 import TeamContext from "../../Context/TeamContext";
 
-const NavBar = () => {
+const NavBar = (props) => {
     const { pokemonTeam } = useContext(TeamContext)
+    // const {onViewPokemonClick} = props;
     const logo = require("../../assets/Poketeam.png")
     return(
        <nav>
@@ -16,7 +17,7 @@ const NavBar = () => {
                 />
             </div>
             <div>
-                <div className="icon-pokemon-team"><MdOutlineCatchingPokemon /></div>
+                <div className="icon-pokemon-team" /*onClick={onViewPokemonClick}*/><MdOutlineCatchingPokemon /></div>
                 <h3>Seu Time Contém: {pokemonTeam.length} Pokémons</h3>
             </div>
        </nav>

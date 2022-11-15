@@ -4,7 +4,7 @@ import styles from "../Pokedex/Pokedex.css"
 import Paginacao from "../Paginacao/Paginacao";
 
 const Pokedex = (props) => {
-  const carregar = require("../../assets/charmander.gif")
+  const loadingScreen = require("../../assets/charmander.gif")
   const { pokemons, loading, page, setPage, totalPages } = props;
   const onLeftClickHandler = () => {
     if(page > 0){
@@ -32,7 +32,7 @@ const Pokedex = (props) => {
            <div className="charmander-gif">
        <img 
        alt="Charmander"
-       src={carregar}
+       src={loadingScreen}
        />
        </div>
       ) : (

@@ -13,4 +13,5 @@ nav {
 
   .icon-pokemon-team {
     color: rgba(255, 255, 6, 0.773);
+    cursor: pointer;
   }

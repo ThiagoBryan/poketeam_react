@@ -5,13 +5,16 @@
 }
 
 .left-click {
-    margin-right: 10px
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .right-click {
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .text {
 font-weight: bold;
+cursor: default;
 }
