@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { searchPokemonEvolution, searchPokemon } from "../../api";
+import styles from "./SearchEvolution.css"
 
-const SearchBarEvolution = () => {
+const SearchBarEvolution = (props) => {
   const [search, setSearch] = useState("dito");
   const [image, setImage] = useState();
   const [pokemon, setPokemon] = useState();
+  const { onSearch } = props;
 
   const onChangeHandler = (e) => {
     setSearch(e.target.value);
+    if (e.target.value.length === 0) {
+      onSearch(undefined);
+    }
   };
 
   const onButtonClickHandler = () => {
@@ -27,7 +32,8 @@ const SearchBarEvolution = () => {
   };
 
   return (
-    <div className="searchBar-container">
+      <div className="pokemon-card">
+    <div className="searchEvoBar-container">
       <div className="searchBar">
         <input placeholder="Buscar Evolução" onChange={onChangeHandler} />
       </div>
@@ -37,11 +43,12 @@ const SearchBarEvolution = () => {
         </button>
       </div>
       {pokemon ? (
-        <div>
-          <div>Nome: {pokemon.chain.evolves_to[0].species.name}</div>
-          <img src={image} alt={pokemon.chain.evolves_to[0].species.name} />
+        <div className="card-body">
+          <div className="card-top">Nome: {pokemon.chain.evolves_to[0].species.name}</div>
+          <img className="pokemon-image" src={image} alt={pokemon.chain.evolves_to[0].species.name} />
         </div>
       ) : null}
+    </div>
     </div>
   );
 };

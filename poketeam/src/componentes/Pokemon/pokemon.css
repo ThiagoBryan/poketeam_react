@@ -61,6 +61,14 @@
     margin-right: 5px;
   }
 
+  .btn-evo {
+    display: flex;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: rgb(79, 79, 84);
+  }
+
   .poke {
     color: rgba(255, 255, 6, 0.773);
   }

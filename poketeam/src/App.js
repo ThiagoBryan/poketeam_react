@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Pokedex from "./componentes/Pokedex/Pokedex";
-import { getPokemons, getPokemonData, searchPokemon } from "./api";
+import { getPokemons, getPokemonData, searchPokemon, searchPokemonEvolution } from "./api";
 import SearchBarEvolution from "./componentes/SearchBarEvolution/SearchBarEvolution";
 import Footer from "./componentes/Footer/Footer";
 import { TeamProvider } from "./Context/TeamContext";
@@ -90,6 +90,22 @@ function App() {
     }
     setLoading(false);
   };
+  const onSearchEvolutionHandler = async (pokemon) => {
+    if (!pokemon) {
+      return fetchPokemons();
+    }
+    setLoading(true);
+    setNotFound(false);
+    const result = await searchPokemonEvolution(pokemon);
+    if (!result) {
+      setNotFound(true);
+    } else {
+      setPokemons([result]);
+      setPage(0);
+      setTotalPages(1);
+    }
+    setLoading(false);
+  };
 
   return (
     <TeamProvider
@@ -102,8 +118,8 @@ function App() {
         <NavBar
         //onViewPokemonClick={onViewPokemonClickHandler}
         />
+        <SearchBarEvolution onSearch={onSearchEvolutionHandler} />
         <SearchBar onSearch={onSearchHandler} />
-        <SearchBarEvolution />
         {notFound ? (
           <div className="not-found">
             Pokémon não Encontrado

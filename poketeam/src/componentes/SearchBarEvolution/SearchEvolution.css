@@ -1,0 +1,39 @@
+.searchEvoBar-container {
+    display: flex;
+    margin: 0px auto;
+    padding: 0 20px;
+    align-items: center;
+  }
+
+.pokemon-card {
+    display: flex;
+    box-shadow: 5px 8px 4px rgba(2, 2, 2, 0.25);
+    border-radius: 10px;
+    background-color: rgb(116, 116, 123);
+    margin-top: 40px;
+   }
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 10px 10px 0px;
+    flex: 1;
+   }
+  
+   .card-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   }
+  
+   .card-top h3 {
+    text-transform: capitalize;
+   }
+
+   .pokemon-image {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+   }
