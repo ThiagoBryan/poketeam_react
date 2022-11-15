@@ -12,7 +12,7 @@ const Pokemon = (props) => {
     updatePokemonTeam(pokemon.name)
     }
 
-    const poke = pokemonTeam.includes(pokemon.name) ? <MdOutlineCatchingPokemon className="poke" /> : <CgPokemon /> 
+  const poke = pokemonTeam.includes(pokemon.name) ? <MdOutlineCatchingPokemon className="poke" /> : <CgPokemon /> 
   return (
     <div className="pokemon-card">
       <div className="pokemon-image-container">

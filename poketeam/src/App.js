@@ -8,6 +8,7 @@ import SearchBar from "./componentes/SearchBar/SearchBar";
 import Footer from "./componentes/Footer/Footer";
 import { TeamProvider } from "./Context/TeamContext";
 
+const teamKey = "t"
 function App() {
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
@@ -32,6 +33,15 @@ function App() {
     }
   };
 
+  const loadPokemonTeam = () => {
+    const pokemons = JSON.parse(window.localStorage.getItem(teamKey)) || []
+    setTeam(pokemons)
+  }
+
+  useEffect(() => {
+    loadPokemonTeam()
+  }, []);
+
   useEffect(() => {
     fetchPokemons();
   }, [page]);
@@ -40,10 +50,11 @@ function App() {
     const updateTeam = [...team];
     const teamIndex = team.indexOf(name);
     if (teamIndex >= 0) {
-      updateTeam.slice(teamIndex, 1);
+      updateTeam.splice(teamIndex, 1);
     } else {
       updateTeam.push(name);
     }
+    window.localStorage.setItem(teamKey, JSON.stringify(updateTeam))
     setTeam(updateTeam);
   };
 
