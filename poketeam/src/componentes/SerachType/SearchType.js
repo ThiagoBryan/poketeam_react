@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./SearchType.css"
 
 const SearchType = (props) => {
     const [search, setSearch] = useState("");
@@ -16,7 +17,6 @@ const SearchType = (props) => {
       document.getElementById("search").value = "";
     };
     return (
-      <div>
         <div className="searchType-container">
           <div className="searchType">
             <input
@@ -31,7 +31,6 @@ const SearchType = (props) => {
             </button>
           </div>
         </div>
-      </div>
     );
   };
   

@@ -6,25 +6,16 @@
     margin-top: 2%;
   }
 
-.pokemon-Evoard {
-    display: flex;
-    box-shadow: 5px 8px 4px rgba(2, 2, 2, 0.25);
-    border-radius: 10px;
-    background-color: rgb(116, 116, 123);
-    margin-top: 40px;
-   }
-
 .card-evoBody {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px 10px 10px 0px;
+    flex-direction: row;
+    padding: 10px 10px 10px 10px;
     border-radius: 10px;
-    width: 10%;
+    width: 30%;
     align-items: center;
     background-color: rgb(116, 116, 123);
-    margin-top: 2%;
     margin-left: 5%;
+    font-weight: bold;
   }
   
    .card-top {

@@ -18,3 +18,9 @@
   border-radius: 10px;
 }
 
+.SerachBars {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
+

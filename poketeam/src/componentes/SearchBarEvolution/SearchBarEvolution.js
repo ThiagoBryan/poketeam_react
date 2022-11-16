@@ -32,7 +32,7 @@ const SearchBarEvolution = (props) => {
   };
 
   return (
-    <div className="pokemon-Evocard">
+    // <div className="pokemon-Evocard">
       <div className="searchEvoBar-container">
         <div className="searchBar">
           <input placeholder="Buscar Evolução" onChange={onChangeHandler} />
@@ -52,19 +52,10 @@ const SearchBarEvolution = (props) => {
               src={image}
               alt={pokemon.chain.evolves_to[0].species.name}
             />
-            {/* <div className="card-evoBottom">
-              {pokemon.types.map((type, index) => {
-                return (
-                  <div key={index} className="pokemon-type-text">
-                    {type.type.name}
-                  </div>
-                );
-              })}
-            </div> */}
           </div>
         ) : null}
       </div>
-    </div>
+    // </div>
   );
 };
 

@@ -116,12 +116,12 @@ function App() {
       return await getPokemonData(pokemon.url);
     });
     const results = await Promise.all(promises);
-    results.map((r)=>{
+    let teste = results.map((r)=>{
       r.types.map((t)=>{
-        let filter = t.type.name.filter(t => (t.toLowerCase() == type));
-        console.log(filter);
+        t.filter(e => (e.type.name.toLowerCase() == type.toLowerCase()));
       });
     });
+    console.log(teste);
     if (!results) {
       setNotFound(true);
     } else {
@@ -145,9 +145,11 @@ function App() {
         <NavBar
         // onViewPokemonClick={onViewPokemonClickHandler}
         />
-        <SearchBarEvolution onSearch={onSearchEvolutionHandler} />
+        <div className="SerachBars">
         <SearchBar onSearch={onSearchHandler} />
         <SearchType onSearch={onSearchTypeHandler}/>
+        <SearchBarEvolution onSearch={onSearchEvolutionHandler} />
+        </div>
         {notFound ? (
           <div className="not-found">
             Pokémon não Encontrado

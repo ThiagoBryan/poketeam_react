@@ -1,12 +1,17 @@
 .footer{
     display: flex;
-    height: 70px;
+    height: 80px;
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
+    justify-content: space-around;
     background-color: rgb(46, 46, 49);
+    margin-top: 5%;
+    position: relative;
+    padding-bottom: 1px;
+}
+
+.footer-text {
+    display: flex;
     font-weight: bold;
     color: rgba(255, 255, 6, 0.773);
-    margin-top: 10%;
-    position: relative;
 }
