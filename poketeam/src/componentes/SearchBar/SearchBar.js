@@ -5,6 +5,11 @@ const SearchBar = (props) => {
     const [search, setSearch] = useState("")
     const {onSearch} = props;
 
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log("submit");
+    //   }
+
     const onChangeHandler = (e) => {
         setSearch(e.target.value.toLowerCase());
         if(e.target.value.length === 0) {
@@ -12,9 +17,11 @@ const SearchBar = (props) => {
         }
     }
 
-    const onButtonClickHandler = () => {
-        onSearch(search)
-        document.getElementById('search').value='';
+    const onButtonClickHandler = (e) => {
+    //    if(e.Key === "Enter"){
+           onSearch(search)
+           document.getElementById('search').value='';
+        // }
     }
 
     return (
@@ -23,7 +30,7 @@ const SearchBar = (props) => {
                 <input id="search" placeholder="Buscar Pokémon" onChange={onChangeHandler} />
             </div>
             <div>
-                <button className="searchBar-btn" onClick={onButtonClickHandler}>Buscar</button>
+                <button type="submit" className="searchBar-btn" onClick={onButtonClickHandler}>Buscar</button>
             </div>
         </div>
 

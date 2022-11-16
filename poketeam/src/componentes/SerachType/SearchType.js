@@ -21,12 +21,12 @@ const SearchType = (props) => {
           <div className="searchType">
             <input
               id="search"
-              placeholder="Buscar Por tipo"
+              placeholder="Buscar Por Tipo"
               onChange={onChangeHandler}
             />
           </div>
           <div>
-            <button className="searchBar-btn" onClick={onButtonClickHandler}>
+            <button type="submit" className="searchBar-btn" onClick={onButtonClickHandler}>
               Buscar
             </button>
           </div>

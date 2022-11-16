@@ -16,8 +16,9 @@ const SearchBarEvolution = (props) => {
   };
 
   const onButtonClickHandler = () => {
-    onSearchHandlerType(search);
+      onSearchHandlerType(search);
   };
+
 
   const onSearchHandlerType = async (id) => {
     const result = await searchPokemonEvolution(id);
@@ -35,10 +36,10 @@ const SearchBarEvolution = (props) => {
     // <div className="pokemon-Evocard">
       <div className="searchEvoBar-container">
         <div className="searchBar">
-          <input placeholder="Buscar Evolução" onChange={onChangeHandler} />
+          <input placeholder="Buscar Evolução ID" onChange={onChangeHandler} />
         </div>
         <div>
-          <button className="searchBar-btn" onClick={onButtonClickHandler}>
+          <button type="submit" className="searchBar-btn" onClick={onButtonClickHandler}>
             Buscar
           </button>
         </div>

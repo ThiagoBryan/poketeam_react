@@ -115,10 +115,10 @@ function App() {
     const promises = data.results.map(async (pokemon) => {
       return await getPokemonData(pokemon.url);
     });
-    const results = await Promise.all(promises);
+    const results = await Promise.all(promises)
     let teste = results.map((r)=>{
       r.types.map((t)=>{
-        t.filter(e => (e.type.name.toLowerCase() == type.toLowerCase()));
+        t.filter(e => e.type.name.toLowerCase() == type.toLowerCase());
       });
     });
     console.log(teste);
