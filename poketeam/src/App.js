@@ -131,6 +131,11 @@ function App() {
     setTotalPages(Math.ceil(data.count / itensPerPage));
   };
 
+  
+ const onSearchViewHandler = () => {
+    
+}
+
   return (
     <TeamProvider
       value={{
@@ -139,7 +144,8 @@ function App() {
       }}
     >
       <div>
-        <NavBar />
+        <NavBar
+        onViewPokemonClick={onSearchViewHandler} />
         <div className="SerachBars">
           <SearchBar onSearch={onSearchHandler} />
           <SearchType onSearch={onSearchTypeHandler} />

@@ -5,6 +5,7 @@ import TeamContext from "../../Context/TeamContext";
 
 const NavBar = (props) => {
   const { pokemonTeam } = useContext(TeamContext);
+  const {onViewSearch} = props;
 //   const home = document.querySelector("#refresh");
 //   home.addEventListener("click", function () {
 //     location.reload();
@@ -18,7 +19,7 @@ const NavBar = (props) => {
         <img alt="Pokemon Team" src={logo} className="navbar-img" />
       </div>
       <div>
-        <div className="icon-pokemon-team" >
+        <div className="icon-pokemon-team" onClick={onViewSearch} >
           <MdOutlineCatchingPokemon />
         </div>
         <h3>Seu Time Contém: {pokemonTeam.length} Pokémons</h3>
