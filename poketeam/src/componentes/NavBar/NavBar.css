@@ -12,7 +12,15 @@ nav {
     width: 200px;
   }
 
-  .icon-pokemon-team {
-    color: rgba(255, 255, 6, 0.773);
+  .pokemon-team {
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pokemon-team h3 {
+    color: rgba(255, 255, 6, 0.773);
+    cursor: default;
+    margin: 0.3rem;
   }

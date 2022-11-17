@@ -18,11 +18,12 @@ const NavBar = (props) => {
       <div>
         <img alt="Pokemon Team" src={logo} className="navbar-img" />
       </div>
-      <div>
-        <div className="icon-pokemon-team" onClick={onViewSearch} >
-          <MdOutlineCatchingPokemon />
-        </div>
+      {/* <div> */}
+        <div className="pokemon-team" onClick={onViewSearch} >
         <h3>Seu Time Contém: {pokemonTeam.length} Pokémons</h3>
+        {/* </div> */}
+        <h3>Veja seu Time no Ícone:</h3>
+          <MdOutlineCatchingPokemon />
       </div>
     </nav>
   );
