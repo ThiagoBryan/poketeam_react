@@ -16,6 +16,7 @@ const SearchBarEvolution = (props) => {
   };
 
   const onButtonClickHandler = () => {
+    document.getElementById("searchEvo").value = "";
       onSearchHandlerType(search);
   };
 
@@ -33,31 +34,31 @@ const SearchBarEvolution = (props) => {
   };
 
   return (
-    // <div className="pokemon-Evocard">
       <div className="searchEvoBar-container">
         <div className="searchBar">
-          <input placeholder="Buscar Evolução ID" onChange={onChangeHandler} />
+          <input id="searchEvo" placeholder="Buscar Evolução ID" onChange={onChangeHandler} />
         </div>
         <div>
           <button type="submit" className="searchBar-btn" onClick={onButtonClickHandler}>
             Buscar
           </button>
         </div>
-        {pokemon ? (
-          <div className="card-evoBody">
-            <div className="card-evoTop">
-              Nome: {pokemon.chain.evolves_to[0].species.name}
-            </div>
-            <img
-              className="pokemon-image"
-              src={image}
-              alt={pokemon.chain.evolves_to[0].species.name}
-            />
-          </div>
-        ) : null}
       </div>
-    // </div>
   );
 };
 
 export default SearchBarEvolution;
+
+
+// {pokemon ? (
+//   <div className="card-evoBody">
+//     <div className="card-evoTop">
+//       Nome: {pokemon.chain.evolves_to[0].species.name}
+//     </div>
+//     <img
+//       className="pokemon-image"
+//       src={image}
+//       alt={pokemon.chain.evolves_to[0].species.name}
+//     />
+//   </div>
+// ) : null}

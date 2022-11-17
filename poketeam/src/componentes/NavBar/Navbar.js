@@ -9,7 +9,7 @@ const NavBar = (props) => {
 //   home.addEventListener("click", function () {
 //     location.reload();
 //   });
-  // const {onViewPokemonClick} = props;
+
   const logo = require("../../assets/Poketeam.png");
   return (
     <nav>
@@ -18,7 +18,7 @@ const NavBar = (props) => {
         <img alt="Pokemon Team" src={logo} className="navbar-img" />
       </div>
       <div>
-        <div className="icon-pokemon-team" /*onClick={onViewPokemonClick}*/>
+        <div className="icon-pokemon-team" >
           <MdOutlineCatchingPokemon />
         </div>
         <h3>Seu Time Contém: {pokemonTeam.length} Pokémons</h3>

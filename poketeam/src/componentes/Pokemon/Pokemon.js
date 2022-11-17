@@ -9,10 +9,10 @@ const Pokemon = (props) => {
   const {pokemonTeam, updatePokemonTeam} = useContext(TeamContext)
   const { pokemon } = props;
   const adicionar = () => {
-    updatePokemonTeam(pokemon.name)
+    updatePokemonTeam(pokemon)
     }
 
-  const poke = pokemonTeam.includes(pokemon.name) ? <MdOutlineCatchingPokemon className="poke" /> : <CgPokemon /> 
+  const poke = pokemonTeam.includes(pokemon) ? <MdOutlineCatchingPokemon className="poke" /> : <CgPokemon /> 
   return (
     <div className="pokemon-card">
       <div className="pokemon-image-container">
@@ -38,7 +38,6 @@ const Pokemon = (props) => {
             })}
           </div>
           <div className="add-team">
-          {/* <button className="btn-evo">Evolução</button> */}
           <h6>Adicionar ao seu time</h6>
           <div onClick={adicionar}>{poke}</div>
           </div>
