@@ -4,6 +4,17 @@
     padding: 0 20px;
     align-items: center;
     margin-top: 2%;
+    width: 80rem;
+  }
+
+  .searchEvoBar-btn{
+    background-color: rgba(195, 195, 36, 0.773);
+    border: solid;
+    border-radius: 10px;
+    height: 45px;
+    color: white;
+    padding: 10px 12px;
+    cursor: pointer;
   }
 
 .card-evoBody {
@@ -11,10 +22,10 @@
     flex-direction: row;
     padding: 10px 10px 10px 10px;
     border-radius: 10px;
-    width: 30%;
+    width: 60%;
     align-items: center;
     background-color: rgb(116, 116, 123);
-    margin-left: 5%;
+    margin-left: 80%;
     font-weight: bold;
   }
   
@@ -34,3 +45,5 @@
     height: 70px;
     margin-right: 10px;
    }
+
+   

@@ -24,7 +24,7 @@ function App() {
   const [pokemons, setPokemons] = useState([]);
   const [notFound, setNotFound] = useState([]);
   const [team, setTeam] = useState([]);
-  const [viewPokemon, setViewPokemon] = useState([]);
+  // const [viewPokemon, setViewPokemon] = useState([]);
 
   const itensPerPage = 27;
   const fetchPokemons = async () => {
@@ -67,6 +67,7 @@ function App() {
     }
     window.localStorage.setItem(teamKey, JSON.stringify(updateTeam));
     setTeam(updateTeam);
+    // onSearchViewHandler();
     console.log(pokemon);
   };
 
@@ -132,8 +133,8 @@ function App() {
   };
 
   
- const onSearchViewHandler = () => {
-    
+ const onSearchViewHandler = async (pokemon) => {
+    console.log(pokemon);
 }
 
   return (

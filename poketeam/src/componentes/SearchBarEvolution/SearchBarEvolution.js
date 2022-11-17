@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { searchPokemonEvolution, searchPokemon } from "../../api";
+import Pokemon from "../Pokemon/Pokemon";
 import styles from "./SearchEvolution.css";
 
 const SearchBarEvolution = (props) => {
+  const loadingScreen = require("../../assets/charmander.gif");
   const [search, setSearch] = useState("dito");
   const [image, setImage] = useState();
   const [pokemon, setPokemon] = useState();
@@ -17,9 +19,8 @@ const SearchBarEvolution = (props) => {
 
   const onButtonClickHandler = () => {
     document.getElementById("searchEvo").value = "";
-      onSearchHandlerType(search);
+    onSearchHandlerType(search);
   };
-
 
   const onSearchHandlerType = async (id) => {
     const result = await searchPokemonEvolution(id);
@@ -34,21 +35,40 @@ const SearchBarEvolution = (props) => {
   };
 
   return (
-      <div className="searchEvoBar-container">
-        <div className="searchBar">
-          <input id="searchEvo" placeholder="Buscar Evolução ID" onChange={onChangeHandler} />
-        </div>
-        <div>
-          <button type="submit" className="searchBar-btn" onClick={onButtonClickHandler}>
-            Buscar
-          </button>
-        </div>
+    <div className="searchEvoBar-container">
+      <div className="searchBar">
+        <input
+          id="searchEvo"
+          placeholder="Buscar Evolução ID"
+          onChange={onChangeHandler}
+        />
       </div>
+      <div>
+        <button
+          type="submit"
+          className="searchEvoBar-btn"
+          onClick={onButtonClickHandler}
+        >
+          Buscar
+        </button>
+        {pokemon ? (
+          <div className="card-evoBody">
+            <div className="card-evoTop">
+              Nome: {pokemon.chain.evolves_to[0].species.name}
+            </div>
+            <img
+              className="pokemon-image"
+              src={image}
+              alt={pokemon.chain.evolves_to[0].species.name}
+            />
+          </div>
+        ) : null}
+      </div>
+    </div>
   );
 };
 
 export default SearchBarEvolution;
-
 
 // {pokemon ? (
 //   <div className="card-evoBody">
