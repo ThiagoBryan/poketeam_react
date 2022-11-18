@@ -1,6 +1,9 @@
 <h1 align="center"> Poke Team </h1>
 
-<h3>Este projeto foi feito em REACT, uma Pokédex onde lista os Pokémons na tela e cria um time.</h3>
+<h3>Este projeto foi feito em REACT, uma Pokédex onde lista os Pokémons na tela e cria um time. 
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+          </h3>
 
 <h5>No início da página um botão Home para recarregar,
 existem três barras de pesquisa onde a primeira se pode pesquisar o Pokémon por nome ou ID da Pokédex,
