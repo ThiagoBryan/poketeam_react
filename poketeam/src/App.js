@@ -65,6 +65,7 @@ function App() {
     }
     window.localStorage.setItem(teamKey, JSON.stringify(updateTeam));
     setTeam(updateTeam);
+    console.log(updateTeam);
   };
 
   const onSearchHandler = async (pokemon) => {

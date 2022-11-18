@@ -13,6 +13,7 @@ const NavBar = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
   const logo = require("../../assets/pikachu.png");
   const modalImage = require("../../assets/pikachu.png");
   function refreshPage() {
@@ -32,7 +33,7 @@ const NavBar = () => {
         <h5>Abra sua Pokébola para Visualizar seu Time</h5>
       </div>
       <div className="icon">
-        <MdOutlineCatchingPokemon size={50} onClick={handleShow} />
+        <MdOutlineCatchingPokemon size={60} onClick={handleShow} />
       </div>
 
 
