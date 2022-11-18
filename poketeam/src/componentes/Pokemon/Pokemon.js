@@ -13,9 +13,9 @@ const Pokemon = (props) => {
   };
 
   const poke = pokemonTeam.includes(pokemon.name) ? (
-    <MdOutlineCatchingPokemon className="poke" />
+    <MdOutlineCatchingPokemon size={30} className="poke" />
   ) : (
-    <CgPokemon />
+    <CgPokemon size={20} />
   );
   return (
     <div className="pokemon-card">

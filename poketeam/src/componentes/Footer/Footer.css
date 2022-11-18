@@ -1,17 +1,25 @@
 .footer{
     display: flex;
-    height: 80px;
     align-items: center;
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     background-color: rgb(46, 46, 49);
-    margin-top: 5%;
-    padding-bottom: 1px;
+    margin-top: 3rem;
+    padding-bottom: 0.8rem;
     position: relative;
+}
+
+.icon-linkedin {
+    margin-bottom: 1rem;
 }
 
 .footer-text {
     display: flex;
     font-weight: bold;
+    font-size: x-large;
     color: rgba(255, 255, 6, 0.773);
+}
+
+.footer:hover {
+    color:rgba(255, 255, 6, 0.773);
 }

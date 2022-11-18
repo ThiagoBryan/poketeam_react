@@ -14,6 +14,7 @@ const NavBar = () => {
   const handleShow = () => setShow(true);
 
   const logo = require("../../assets/pikachu.png");
+  const modalImage = require("../../assets/pikachu.png");
   function refreshPage() {
     window.parent.location = window.parent.location.href;
   }
@@ -23,7 +24,7 @@ const NavBar = () => {
         HOME
       </button>
       <div>
-        <img alt="Pokemon Team" src={logo} className="navbar-img" />
+        <img alt="Pikachu" src={logo} className="navbar-img" />
       </div>
       <div className="pokemon-team" >
         <h5>Seu Time Contém: {pokemonTeam.length} Pokémons</h5>
@@ -36,9 +37,9 @@ const NavBar = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title> Pokemon Team </Modal.Title>
+          <Modal.Title style={{color:"black", fontWeight:"bold", alignItems:"center"}}> Pokemon Team </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="modal-body">
           {pokemonTeam.map((pokemon, index) => {
             return (
               <div key={index} className="pokemon-text">
@@ -47,8 +48,8 @@ const NavBar = () => {
             );
           })}
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+        <Modal.Footer style={{backgroundColor:"rgb(144, 144, 161)"}}>
+          <Button style={{backgroundColor:"rgba(255, 255, 6, 0.773)", color:"black", fontWeight:"bold", alignItens:"center"}} variant="secondary" onClick={handleClose}>
             Close
           </Button>
         </Modal.Footer>

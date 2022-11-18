@@ -7,8 +7,12 @@ const Footer = () => {
   return (
     <div className="footer">
       <p className="footer-text">Thiago Bryan 2022</p>
-          <Linkedin />
-          <GitHub />
+      <div className="icon-linkedin">
+        <Linkedin />
+      </div>
+      <div className="icon-github">
+        <GitHub />
+      </div>
     </div>
   );
 };

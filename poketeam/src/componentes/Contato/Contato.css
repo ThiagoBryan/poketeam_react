@@ -1,5 +1,5 @@
-.icon-linkedin{
-    cursor: pointer;
+.icon-contato {
+    display: flex;
 }
 
 a:link {
@@ -7,5 +7,5 @@ a:link {
    }
    
    a:hover {
-    color: rgb(235, 235, 11);
+    background-color: rgb(235, 235, 11);
    }

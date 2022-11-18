@@ -6,9 +6,9 @@ import styles from "./Contato.css"
 
 const GitHub = () => {
     return(
-        <div className="icon-gitHub">
+        <div className="icon-contato">
              <a href="https://github.com/ThiagoBryan">
-            <BsGithub  />
+            <BsGithub size={30} />
             </a>
 
         </div>
