@@ -1,18 +1,19 @@
 .pokemon-card {
     display: flex;
     box-shadow: 5px 8px 4px rgba(2, 2, 2, 0.25);
-    border-radius: 10px;
+    border-radius: 0.9rem;
     background-color: rgb(116, 116, 123);
    }
   
    .pokemon-image {
     width: 70px;
     height: 70px;
-    margin-right: 10px;
    }
   
    .pokemon-image-container {
     padding: 0px 5px;
+    width: 7rem;
+    height: 6rem;
    }
   
    .card-body {
@@ -32,6 +33,7 @@
   
    .card-top h3 {
     text-transform: capitalize;
+    font-size: x-large;
    }
   
   .card-bottom {
@@ -60,14 +62,6 @@
   .add-team h6 {
     cursor: default;
     margin-right: 5px;
-  }
-
-  .btn-evo {
-    display: flex;
-    cursor: pointer;
-    margin-right: 10px;
-    border-radius: 10px;
-    background-color: rgb(79, 79, 84);
   }
 
   .poke {

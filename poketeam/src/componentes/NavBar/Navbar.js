@@ -18,6 +18,7 @@ const NavBar = () => {
   function refreshPage() {
     window.parent.location = window.parent.location.href;
   }
+
   return (
     <nav>
       <button className="refresh" onClick={refreshPage}>
@@ -43,7 +44,7 @@ const NavBar = () => {
           {pokemonTeam.map((pokemon, index) => {
             return (
               <div key={index} className="pokemon-text">
-                {pokemon}
+                {pokemon.toUpperCase()}
               </div>
             );
           })}

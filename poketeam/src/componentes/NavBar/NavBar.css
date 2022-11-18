@@ -54,6 +54,11 @@ nav {
 
   }
 
+  .pokemon-text{
+    font-weight: bold;
+    /* text-transform: capitalize; */
+  }
+
   .modal-footer {
     background-color: rgb(144, 144, 161);
   }
