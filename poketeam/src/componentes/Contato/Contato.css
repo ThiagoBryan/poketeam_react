@@ -1,7 +1,12 @@
 .icon-contato {
     display: flex;
 }
-   
-   a:hover {
-    background-color: rgb(235, 235, 11);
+
+.icon-contato a {
+    color: rgb(235, 235, 11);
    }
+
+   .icon-contato a:hover {
+    color: rgb(235, 235, 90);
+   }
+
