@@ -39,7 +39,7 @@ const NavBar = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title style={{color:"black", fontWeight:"bold", alignItems:"center"}}> Pokemon Team </Modal.Title>
+          <Modal.Title style={{color:"rgba(255, 255, 6, 0.773)", fontWeight:"bold", alignItems:"center"}}> Pokemon Team </Modal.Title>
         </Modal.Header>
         <Modal.Body className="modal-body">
           {pokemonTeam.map((pokemon, index) => {
@@ -50,7 +50,7 @@ const NavBar = () => {
             );
           })}
         </Modal.Body>
-        <Modal.Footer style={{backgroundColor:"rgb(144, 144, 161)"}}>
+        <Modal.Footer style={{backgroundColor:"rgba(46, 46, 49)"}}>
           <Button style={{backgroundColor:"rgba(255, 255, 6, 0.773)", color:"black", fontWeight:"bold", alignItens:"center"}} variant="secondary" onClick={handleClose}>
             Close
           </Button>

@@ -41,26 +41,26 @@ nav {
   }
 
   .refresh:hover {
-    background-color: rgb(144, 144, 161);
+    background-color: rgb(46, 46, 49);
   }
 
   .modal-header{
-    background-color: rgb(144, 144, 161);
+    background-color: rgb(46, 46, 49);
 
   }
 
   .modal-body{
-    background-color: rgba(255, 255, 6, 0.773);
+    background-color: rgb(46, 46, 49);
 
   }
 
   .pokemon-text{
     font-weight: bold;
-    /* text-transform: capitalize; */
+    color:  rgba(255, 255, 6, 0.773);
   }
 
   .modal-footer {
-    background-color: rgb(144, 144, 161);
+    background-color: rgb(46, 46, 49);
   }
 
   .modal-button {
