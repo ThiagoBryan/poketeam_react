@@ -4,8 +4,7 @@ import Pokedex from "./componentes/Pokedex/Pokedex";
 import {
   getPokemons,
   getPokemonData,
-  searchPokemon,
-  searchPokemonEvolution,
+  searchPokemon
 } from "./api";
 import SearchBarEvolution from "./componentes/SearchBarEvolution/SearchBarEvolution";
 import Footer from "./componentes/Footer/Footer";
@@ -24,7 +23,6 @@ function App() {
   const [pokemons, setPokemons] = useState([]);
   const [notFound, setNotFound] = useState([]);
   const [team, setTeam] = useState([]);
-  // const [viewPokemon, setViewPokemon] = useState([]);
 
   const itensPerPage = 27;
   const fetchPokemons = async () => {
@@ -67,8 +65,6 @@ function App() {
     }
     window.localStorage.setItem(teamKey, JSON.stringify(updateTeam));
     setTeam(updateTeam);
-    // onSearchViewHandler();
-    console.log(pokemon);
   };
 
   const onSearchHandler = async (pokemon) => {
@@ -78,23 +74,6 @@ function App() {
     setLoading(true);
     setNotFound(false);
     const result = await searchPokemon(pokemon);
-    if (!result) {
-      setNotFound(true);
-    } else {
-      setPokemons([result]);
-      setPage(0);
-      setTotalPages(1);
-    }
-    setLoading(false);
-  };
-
-  const onSearchEvolutionHandler = async (pokemon) => {
-    if (!pokemon) {
-      return fetchPokemons();
-    }
-    setLoading(true);
-    setNotFound(false);
-    const result = await searchPokemonEvolution(pokemon);
     if (!result) {
       setNotFound(true);
     } else {
@@ -121,21 +100,13 @@ function App() {
         }
       });
     });
-    if (!pokemonsFilter) {
+    if (pokemonsFilter.length == 0) {
       setNotFound(true);
     } else {
       setPokemons(pokemonsFilter);
-      setPage(0);
-      setTotalPages(1);
     }
     setLoading(false);
-    setTotalPages(Math.ceil(data.count / itensPerPage));
   };
-
-  
- const onSearchViewHandler = async (pokemon) => {
-    console.log(pokemon);
-}
 
   return (
     <TeamProvider
@@ -145,12 +116,11 @@ function App() {
       }}
     >
       <div>
-        <NavBar
-        onViewPokemonClick={onSearchViewHandler} />
+        <NavBar/>
         <div className="SerachBars">
           <SearchBar onSearch={onSearchHandler} />
           <SearchType onSearch={onSearchTypeHandler} />
-          <SearchBarEvolution onSearch={onSearchEvolutionHandler} />
+          <SearchBarEvolution /> 
         </div>
         {notFound ? (
           <div className="not-found">

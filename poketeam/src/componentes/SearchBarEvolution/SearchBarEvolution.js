@@ -4,8 +4,7 @@ import Pokemon from "../Pokemon/Pokemon";
 import styles from "./SearchEvolution.css";
 
 const SearchBarEvolution = (props) => {
-  const loadingScreen = require("../../assets/charmander.gif");
-  const [search, setSearch] = useState("dito");
+  const [search, setSearch] = useState("");
   const [image, setImage] = useState();
   const [pokemon, setPokemon] = useState();
   const { onSearch } = props;
@@ -19,10 +18,10 @@ const SearchBarEvolution = (props) => {
 
   const onButtonClickHandler = () => {
     document.getElementById("searchEvo").value = "";
-    onSearchHandlerType(search);
+    onSearchHandlerEvolution(search);
   };
 
-  const onSearchHandlerType = async (id) => {
+  const onSearchHandlerEvolution = async (id) => {
     const result = await searchPokemonEvolution(id);
     setPokemon(result);
     searchImage(result.chain.evolves_to[0].species.url.substring(42));
@@ -51,34 +50,21 @@ const SearchBarEvolution = (props) => {
         >
           Buscar
         </button>
-        {pokemon ? (
-          <div className="card-evoBody">
-            <div className="card-evoTop">
-              Nome: {pokemon.chain.evolves_to[0].species.name}
-            </div>
-            <img
-              className="pokemon-image"
-              src={image}
-              alt={pokemon.chain.evolves_to[0].species.name}
-            />
-          </div>
-        ) : null}
       </div>
+      {pokemon ? (
+        <div className="card-evoBody">
+          <div className="card-evoTop">
+            Nome: {pokemon.chain.evolves_to[0].species.name}
+          </div>
+          <img
+            className="pokemon-image"
+            src={image}
+            alt={pokemon.chain.evolves_to[0].species.name}
+          />
+        </div>
+      ) : null}
     </div>
   );
 };
 
 export default SearchBarEvolution;
-
-// {pokemon ? (
-//   <div className="card-evoBody">
-//     <div className="card-evoTop">
-//       Nome: {pokemon.chain.evolves_to[0].species.name}
-//     </div>
-//     <img
-//       className="pokemon-image"
-//       src={image}
-//       alt={pokemon.chain.evolves_to[0].species.name}
-//     />
-//   </div>
-// ) : null}

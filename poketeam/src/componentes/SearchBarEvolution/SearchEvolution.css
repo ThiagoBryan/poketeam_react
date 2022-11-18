@@ -1,49 +1,30 @@
 .searchEvoBar-container {
     display: flex;
-    margin: 0px auto;
-    padding: 0 20px;
+    margin: 0 auto;
     align-items: center;
-    margin-top: 2%;
-    width: 80rem;
+    margin-top: 2rem;
   }
 
   .searchEvoBar-btn{
     background-color: rgba(195, 195, 36, 0.773);
     border: solid;
     border-radius: 10px;
-    height: 45px;
+    height: 3rem;
     color: white;
-    padding: 10px 12px;
     cursor: pointer;
   }
 
 .card-evoBody {
-    display: flex;
-    flex-direction: row;
+     display: flex;
+    flex-direction: column;
     padding: 10px 10px 10px 10px;
-    border-radius: 10px;
-    width: 60%;
     align-items: center;
-    background-color: rgb(116, 116, 123);
-    margin-left: 80%;
-    font-weight: bold;
+    font-weight: bold; 
   }
   
-   .card-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-   }
-  
-   .card-top h3 {
-    text-transform: capitalize;
-   }
-
    .pokemon-image {
-    width: 70px;
-    height: 70px;
-    margin-right: 10px;
+    width: 80px;
+    height: 80px;
    }
 
    

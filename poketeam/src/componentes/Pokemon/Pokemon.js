@@ -7,6 +7,7 @@ import { MdOutlineCatchingPokemon } from "react-icons/md";
 const Pokemon = (props) => {
   const { pokemonTeam, updatePokemonTeam } = useContext(TeamContext);
   const { pokemon } = props;
+  
   const adicionar = () => {
     updatePokemonTeam(pokemon.name);
   };
